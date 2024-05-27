@@ -4,7 +4,7 @@ A Rest Api application built using node express.
 
 This is backend server repo(rest api) , should be run before running frontend https://github.com/vaimehro/visualization-frontend ,clone this repo and do `cd visualization-backend`.
  
-steps
+steps:
 
 `npm install`
  
