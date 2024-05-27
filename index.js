@@ -23,8 +23,19 @@ app.listen(8080, () => {
 });
 
 app.get("/getData", async (req, res, next) => {
-  let fetched = await fetchData();
-  res.status(200);
+ 
+  try {
+    let fetched = await fetchData();
+    res.status(200);
+    res.send(transformData(fetched));
 
-  res.send(transformData(fetched));
+  } catch (error) {
+    console.error("Error fetching data:", error);
+   
+    res.send({error:true,message:error.message,status:error.status});
+    res.status(404);
+  }
+  
+
+ 
 });

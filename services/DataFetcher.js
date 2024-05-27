@@ -14,6 +14,10 @@ const fetchData = async () => {
     .then((response) => {
       fetched = response.data.data;
       console.log("######## Fetched Data ###########");
+    })
+    .catch((error) => {
+      console.log("######## Error Fetchin Data ###########");
+      throw error;
     });
   return fetched;
 };
